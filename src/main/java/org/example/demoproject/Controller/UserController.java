@@ -1,6 +1,6 @@
-package com.example.weavy.controller;
+package org.example.demoproject.Controller;
 
-import com.example.weavy.service.UserService;
+import org.example.demoproject.Service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
