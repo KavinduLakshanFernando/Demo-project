@@ -1,8 +1,10 @@
 package org.example.demoproject.Service;
 
 import okhttp3.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 
 import java.io.IOException;
 
@@ -11,9 +13,11 @@ public class UserService {
 
     private final OkHttpClient client = new OkHttpClient();
 
+    @Value("${weavy.url}")
+    private String WEAVY_URL;
 
-    private static final String WEAVY_URL = "https://887bdcf727aa49e58ff72b838c562000.weavy.io";
-    private static final String API_KEY = "ys_qJT9S5JvveUcvBHUmOTHwojdPclmPH4KUwr5";
+    @Value("${weavy.apikey}")
+    private String API_KEY;
 
     //  Create User
     public ResponseEntity<String> createUser(String userJson) throws IOException {

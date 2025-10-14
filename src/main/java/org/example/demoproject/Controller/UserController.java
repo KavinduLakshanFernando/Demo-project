@@ -16,31 +16,31 @@ public class UserController {
         this.userService = userService;
     }
 
-    // ✅ Create user
-    @PostMapping
+    //  Create user
+    @PostMapping("/create")
     public ResponseEntity<String> createUser(@RequestBody String userJson) throws IOException {
         return userService.createUser(userJson);
     }
 
-    // ✅ List users
-    @GetMapping
+    //  List users
+    @GetMapping("/get")
     public ResponseEntity<String> listUsers() throws IOException {
         return userService.listUsers();
     }
 
-    // ✅ Get user by ID / UID
+    //  Get user by ID / UID
     @GetMapping("/{id}")
     public ResponseEntity<String> getUser(@PathVariable String id) throws IOException {
         return userService.getUser(id);
     }
 
-    // ✅ Update user
+    //  Update user
     @PutMapping("/{id}")
     public ResponseEntity<String> updateUser(@PathVariable String id, @RequestBody String userJson) throws IOException {
         return userService.updateUser(id, userJson);
     }
 
-    // ✅ Delete user
+    // Delete user
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable String id) throws IOException {
         return userService.deleteUser(id);
